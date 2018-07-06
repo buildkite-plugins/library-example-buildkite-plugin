@@ -9,4 +9,4 @@ steps:
   - label: ":sparkles: Lint"
     plugins:
       plugin-linter#v2.0.0:
-        id: example-library
+        id: library-example

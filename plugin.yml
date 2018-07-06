@@ -1,4 +1,4 @@
-name: Example Library
+name: Library Example
 description: An example plugin for adding your own library of commands to expose to build jobs
 author: https://github.com/buildkite
 requirements:
