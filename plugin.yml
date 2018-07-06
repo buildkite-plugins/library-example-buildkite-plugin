@@ -1,0 +1,8 @@
+name: Example Library
+description: An example plugin for adding your own library of commands to expose to build jobs
+author: https://github.com/buildkite
+requirements:
+  - docker
+configuration:
+  properties: {}
+  additionalProperties: false
