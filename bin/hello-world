@@ -1,0 +1,4 @@
+#!/bin/bash
+set -euo pipefail
+
+exec docker --log-level warn run -t --rm hello-world "$@"
