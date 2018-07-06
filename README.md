@@ -1,22 +1,28 @@
 # Example Library Buildkite Plugin
 
-An example [Buildkite plugin](https://buildkite.com/docs/agent/v3/plugins) that exposes your own library of scripts and commands to build jobs.
+An example [Buildkite Plugin](https://buildkite.com/docs/agent/v3/plugins) that exposes a own library of scripts and commands to build jobs.
 
-It works by providing [an `environment` hook](hooks/environment) which updates `$PATH` to include the `bin` directory containing the additional commands you want to expose to build jobs.
+It works by providing [an `environment` hook](hooks/environment) which updates `$PATH` to include the `bin` directory containing the additional commands to expose to build jobs.
+
+You can use this pattern to create your own plugin and consolidate and version your own commands and scripts between build pipelines.
+
+This plugin pattern is generally less preferred than creating smaller, more declarative plugins with their own YAML based API. But for some situations, this library plugin pattern can be handy.
+
+## Usage
 
 ```yml
 steps:
-  # Example of a simple command that echos
-  - command: my-simple-command
+  # Run the included simple-command script that echos
+  - command: simple-command
     plugins:
       example-library#v1.0.0: ~
 
-  # Example of a command that runs a Docker container
+  # Run the included hello-world script that runs a Docker container
   - command: hello-world
     plugins:
       example-library#v1.0.0: ~
 
-  # Example that you can run the library of commands within your own scripts and processes
+  # Run the included hello-world from inside a bash process, showing that you can run the library of commands within your own scripts and processes (e.g. `my-script.sh`)
   - command: bash -c 'hello-world'
     plugins:
       example-library#v1.0.0: ~
