@@ -10,10 +10,12 @@ steps:
   - command: my-simple-command
     plugins:
       example-library#v1.0.0: ~
+
   # Example of a command that runs a Docker container
   - command: hello-world
     plugins:
       example-library#v1.0.0: ~
+
   # Example that you can run the library of commands within your own scripts and processes
   - command: bash -c 'hello-world'
     plugins:
