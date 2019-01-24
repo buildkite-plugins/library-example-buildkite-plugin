@@ -15,17 +15,17 @@ steps:
   # Run the included simple-command script that echos
   - command: simple-command
     plugins:
-      library-example#v1.0.0: ~
+      - library-example#v1.0.0: ~
 
   # Run the included hello-world script that runs a Docker container
   - command: hello-world
     plugins:
-      library-example#v1.0.0: ~
+      - library-example#v1.0.0: ~
 
   # Run the included hello-world from inside a bash process, showing that you can run the library of commands within your own scripts and processes (e.g. `my-script.sh`)
   - command: bash -c 'hello-world'
     plugins:
-      library-example#v1.0.0: ~
+      - library-example#v1.0.0: ~
 ```
 
 ## License
