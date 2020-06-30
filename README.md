@@ -1,4 +1,4 @@
-# Library Example Buildkite Plugin
+# Library Example Buildkite Plugin [![Build status](https://badge.buildkite.com/acf3e41311e5819510cb28c2834de9fe39b2d9931b69d87f4a.svg?branch=master)](https://buildkite.com/buildkite/plugins-library-example)
 
 An example [Buildkite Plugin](https://buildkite.com/docs/agent/v3/plugins) for adding your own library of commands to expose to build jobs.
 
