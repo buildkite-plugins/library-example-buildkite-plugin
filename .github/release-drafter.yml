@@ -10,8 +10,8 @@ template: |
 
   ```diff
   steps:
-    - command: simple-command
-      plugins:
-  -     example-library#$PREVIOUS_TAG: ~
-  +     example-library#TODO: ~
+    - plugins:
+  -     golang-cross-compile#$PREVIOUS_TAG:
+  +     golang-cross-compile#TODO:
+          build: main.go
   ```
