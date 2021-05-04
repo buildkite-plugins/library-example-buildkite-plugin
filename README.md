@@ -6,7 +6,7 @@ It works by providing [an `environment` hook](hooks/environment) which updates `
 
 You can use this pattern to create your own plugin and consolidate and version your own commands and scripts between build pipelines.
 
-This plugin pattern is generally less preferred than creating smaller, more declarative plugins with their own YAML based API. But for some situations, this library plugin pattern can be handy.
+In practice, most plugins do not use this pattern. Plugins are usually smaller and more declarative, with their own YAML based API. But for some situations, this library plugin pattern can be handy.
 
 ## Usage
 
