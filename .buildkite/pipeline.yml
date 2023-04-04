@@ -1,12 +1,12 @@
 steps:
   - label: ":shell: Shellcheck"
     plugins:
-      shellcheck#v1.3.0:
-        files:
-          - hooks/**
-          - bin/**
+      - shellcheck#v1.3.0:
+          files:
+            - hooks/**
+            - bin/**
 
   - label: ":sparkles: Lint"
     plugins:
-      plugin-linter#v3.0.0:
-        id: library-example
+      - plugin-linter#v3.1.0:
+          id: library-example
