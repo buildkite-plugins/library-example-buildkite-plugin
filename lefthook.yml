@@ -1,0 +1,15 @@
+pre-commit:
+  #  parallel: true
+   commands:
+    shellcheck-hooks:
+      root: hooks/
+      run: docker run --rm -v "$PWD:/mnt" --workdir "/mnt" koalaman/shellcheck-alpine:latest shellcheck {staged_files}
+    shellcheck-bin:
+      root: bin/
+      run: docker run --rm -v "$PWD:/mnt" --workdir "/mnt" koalaman/shellcheck-alpine:latest shellcheck {staged_files}
+    build-kite-plugin-lint:
+      glob: "{README.md,pipeline.yml}"
+      run: docker run -it --rm -v "$PWD:/plugin:ro" --workdir "/plugin" buildkite/plugin-linter pwd --id sjames-au/sectools
+    gitleaks:
+      run: docker run -it --rm -v "$PWD:/code" --workdir "/code" zricethezav/gitleaks protect
+     

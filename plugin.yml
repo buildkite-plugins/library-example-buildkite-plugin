@@ -1,8 +1,10 @@
-name: Library Example
-description: An example plugin for adding your own library of commands to expose to build jobs
-author: https://github.com/buildkite
+name: Sec Tools
+description: A collection of various security scanners
+author: https://github.com/sjames-au
 requirements:
   - docker
 configuration:
-  properties: {}
+  properties:
+    image-version:
+      type: string
   additionalProperties: false

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -euo pipefail
+
+TAG=${GITLEAKS_IMAGE_VERSION:-latest}
+
+echo "--- :docker: Fetching zricethezav/gitleaks:latest:${TAG}"
+
+docker pull "zricethezav/gitleaks:${TAG}"
+
+echo "+++ Scanning with gitleaks protect"
+
+args=(
+    "-it"
+    "--rm"
+    "--volume" "$PWD:/plugin:ro"
+    "--workdir" "/plugin"
+)
+
+docker run "${args[@]}" zricethezav/gitleaks:"${TAG}" protect

@@ -5,8 +5,12 @@ steps:
           files:
             - hooks/**
             - bin/**
-
   - label: ":sparkles: Lint"
     plugins:
       - plugin-linter#v3.2.0:
-          id: library-example
+          id: sjames-au/sectools
+  - label: ":dogfood: gitleaks"
+    command: gitleaks
+    plugins:
+      - sjames-au/sectools#gitleaks:
+          
